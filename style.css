@@ -1,0 +1,20 @@
+body {
+    height: 100%;
+    background-image: url(images/crystalBall.jpg);
+   background-position: 100% 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   text-align: center;
+} 
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    text-shadow: 2px 2px whitesmoke;
+}
+
+#cheeseburgers {
+    line-height: 0.5em;
+    padding-bottom: 10px;
+}
