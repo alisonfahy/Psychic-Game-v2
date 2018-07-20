@@ -16,13 +16,26 @@ $("#letters-guessed").text(lettersGuessed);
 //Computer picks letter at random:
 var letters = ["a", "b", "c", "d", "e","f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", 
                 "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var random = Math.floor((Math.random() * letters.length - 1) + 1);
-var computerChoice = letters[random];
-console.log(computerChoice)
+
+// let computerChoice = letters[Math.floor((Math.random() * letters.length - 1) + 1)];
+// console.log(computerChoice);
+
+// function updateChoice() {
+// computerChoice = letters[Math.floor((Math.random() * letters.length - 1) + 1)];
+// console.log("whyyyyyyyyy?");
+// };
+
+var updateLetterToGuess = function() {
+    // Here we get a random letterToGuess and assign it based on a random generator (only looking at a, b, or c)
+var letterToGuess = letters[Math.floor(Math.random() * letters.length)];
+    console.log(letterToGuess);
+  };
+  
+
 
 //game reset function:
 function resetGame() {
-  computerChoice = letters[random];
+  updateLetterToGuess();
   guessAmt = 9;
   $("#guess-amt").text(guessAmt);
   lettersGuessed = [];
@@ -42,7 +55,7 @@ var userInput = $(document).keypress (function(event) {
   $("#guess-amt").text(guessAmt);
 
 //If guess is correct:
-if (userInput === computerChoice) {
+if (userInput === letterToGuess) {
     wins++;
     $("#Wins").text(wins);
     resetGame();
@@ -58,3 +71,5 @@ if (guessAmt === 0) {
 }
 });
 })
+
+// - 1) + 1)
